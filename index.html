@@ -1,417 +1,336 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Business Analytics & Chatbots for SMEs | Shivansh</title>
-  <meta name="description" content="Turn your business data into clear decisions. Dashboards, reports, automation, and business chatbots for SMEs in Sydney." />
-  <style>
-    :root{
-      --bg:#0b1220; --card:#0f1a33; --muted:#9fb0d0; --text:#e8eeff;
-      --accent:#7c5cff; --accent2:#22c55e; --border:rgba(255,255,255,.10);
-      --shadow:0 16px 40px rgba(0,0,0,.35);
-      --radius:20px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:radial-gradient(1000px 600px at 15% 0%, rgba(124,92,255,.25), transparent 60%), radial-gradient(900px 550px at 85% 10%, rgba(34,197,94,.15), transparent 55%), var(--bg);color:var(--text);}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,18,32,.65);border-bottom:1px solid var(--border);z-index:50}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 4px rgba(124,92,255,.15)}
-    .nav-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
-    .nav-links a{padding:8px 10px;border-radius:999px;color:var(--muted)}
-    .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-
-    .hero{padding:56px 0 24px}
-    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch}
-    @media (max-width: 900px){.hero-grid{grid-template-columns:1fr;}}
-
-    .h1{font-size:44px;line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}
-    @media (max-width: 520px){.h1{font-size:36px}}
-    .lead{color:var(--muted);font-size:18px;line-height:1.55;margin:0 0 22px}
-
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
-    .pill{border:1px solid var(--border);background:rgba(255,255,255,.04);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);font-weight:650;box-shadow:0 10px 22px rgba(0,0,0,.22)}
-    .btn:hover{transform:translateY(-1px);transition:.15s ease;}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),#4f46e5);border-color:transparent}
-    .btn.secondary{background:linear-gradient(135deg,rgba(34,197,94,.22),rgba(34,197,94,.08));}
-    .btn small{opacity:.9;font-weight:600}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .card-pad{padding:18px}
-
-    .quick{display:grid;grid-template-columns:1fr;gap:12px}
-    .kpi{padding:14px;border-radius:16px;border:1px dashed rgba(255,255,255,.18);background:rgba(255,255,255,.03)}
-    .kpi b{display:block;font-size:14px;margin-bottom:4px}
-    .kpi span{color:var(--muted);font-size:13px;line-height:1.45}
-
-    section{padding:34px 0}
-    .section-title{font-size:24px;margin:0 0 8px;letter-spacing:-.01em}
-    .section-sub{color:var(--muted);margin:0 0 18px;line-height:1.6}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 900px){.grid3{grid-template-columns:1fr;}}
-
-    .service{padding:18px}
-    .service h3{margin:0 0 8px;font-size:16px}
-    .service p{margin:0 0 12px;color:var(--muted);line-height:1.6}
-    .service ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
-
-    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 900px){.how{grid-template-columns:1fr;}}
-    .step{padding:18px}
-    .num{width:34px;height:34px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.35);margin-bottom:10px;font-weight:800}
-
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width: 900px){.pricing{grid-template-columns:1fr;}}
-    .price{padding:18px;position:relative;overflow:hidden}
-    .badge{position:absolute;top:14px;right:14px;font-size:12px;color:#0b1220;background:linear-gradient(135deg,#fbbf24,#fb7185);padding:6px 10px;border-radius:999px;font-weight:800}
-    .price h3{margin:0 0 6px}
-    .price .tag{color:var(--muted);margin:0 0 12px}
-    .price .amt{font-size:28px;font-weight:900;margin:0 0 10px}
-    .price ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-
-    details{border:1px solid var(--border);border-radius:16px;padding:14px 16px;background:rgba(255,255,255,.03)}
-    details summary{cursor:pointer;font-weight:700}
-    details p{color:var(--muted);margin:10px 0 0;line-height:1.6}
-    .faq{display:grid;gap:10px}
-
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width: 900px){.contact{grid-template-columns:1fr;}}
-    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
-    input, textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);outline:none}
-    textarea{min-height:120px;resize:vertical}
-
-    .footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--border)}
-    .fine{font-size:12px;line-height:1.6}
-
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivansh Pandey | Clinic Data & Automation</title>
+  <meta name="description" content="I help local clinics reduce no-shows, save admin time, and turn appointment data into clear insights and reports." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Shivansh • Analytics for SMEs</span>
-      </div>
-      <nav class="nav-links" aria-label="Primary">
+  <!-- Top bar -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="dot"></span>
+        <span>Shivansh Pandey</span>
+      </a>
+
+      <nav class="menu">
         <a href="#services">Services</a>
-        <a href="#how">How it works</a>
-        <a href="#pricing">Packages</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#results">Results</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn btn--small">Book a free check</a>
       </nav>
+
+      <button class="burger" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <!-- Hero -->
   <main>
     <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="pill-row">
-        <span class="pill">Helping Small Businesses</span>
-        <span class="pill">Data Insights • Dashboards • Automation</span>
-        <span class="pill">Business Chatbots</span>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Local clinic analytics • dashboards • automation</p>
+          <h1>
+            Help your clinic <span class="accent">reduce no-shows</span>, save admin time,
+            and make better decisions with your existing data.
+          </h1>
+          <p class="subtext">
+            I’m a Sydney-based data consultant. I turn appointment + billing exports into
+            a simple dashboard and a management-ready report — with clear actions.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="#contact">Book a free 20-min Clinic Data Health Check</a>
+            <a class="btn btn--ghost" href="#packages">See packages</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <strong>Fast</strong>
+              <span>1–3 days delivery</span>
+            </div>
+            <div class="trust-item">
+              <strong>Simple</strong>
+              <span>no tech headaches</span>
+            </div>
+            <div class="trust-item">
+              <strong>Secure</strong>
+              <span>privacy-first approach</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <div class="card-top">
+              <h3>What you get in the free check</h3>
+              <p class="muted">No obligation. Practical insights only.</p>
+            </div>
+
+            <ul class="list">
+              <li><span class="tick">✓</span> Where no-shows & late cancels are costing you</li>
+              <li><span class="tick">✓</span> Peak-time / doctor utilisation snapshot</li>
+              <li><span class="tick">✓</span> 3 quick wins to improve scheduling & reminders</li>
+              <li><span class="tick">✓</span> Recommended next step + fixed quote</li>
+            </ul>
+
+            <div class="mini-cta">
+              <a class="btn btn--block" href="#contact">Get the free check</a>
+              <p class="fineprint">Perfect for GP, dental, physio, psych & allied health.</p>
+            </div>
+          </div>
+
+          <div class="mini-metrics">
+            <div class="metric">
+              <span class="metric-num">5–10%</span>
+              <span class="metric-label">no-show reduction target</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num">2–6 hrs</span>
+              <span class="metric-label">admin time saved / week</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num">1–2 pg</span>
+              <span class="metric-label">clear management report</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- New Hero Headline -->
-      <h1 class="h1">Make Sense of Your Business Data — Without the Confusion</h1>
-
-      <!-- New Subheadline -->
-      <p class="lead">
-        I help small businesses turn messy spreadsheets, sales reports, and marketing data into
-        clear insights and visuals you can act on — no jargon, no stress.
-      </p>
-
-      <!-- Primary Email CTA -->
-      <div class="cta">
-        <a class="btn primary" href="mailto:shivansh23pandey@gmail.com?subject=Analytics%20Help%20Request&body=Hi%20Shivansh,%0A%0AI%27d%20like%20help%20with%20my%20business%20data.%20Here%27s%20a%20quick%20summary:%0A%0A-%20Business%20Type:%0A-%20Data%20I%20Have:%0A-%20What%20I%20Need:%0A-%20Deadline:%0A%0AThanks!">
-          Email Me Your Data Problem
-        </a>
+    <!-- Logos / credibility strip -->
+    <section class="strip">
+      <div class="container strip-inner">
+        <p class="strip-title">Built for busy clinic owners:</p>
+        <div class="strip-badges">
+          <span class="badge">Appointment insights</span>
+          <span class="badge">Operations reporting</span>
+          <span class="badge">Workflow automation</span>
+          <span class="badge">Chatbot for FAQs</span>
+        </div>
       </div>
+    </section>
 
-      <!-- Helpful Note Under CTA -->
-      <p class="section-sub" style="margin-top:14px; font-size:15px;">
-        No commitment — just send me what you have and what you want to improve.
-      </p>
-    </div>
-
-    <!-- Optional Visual / Summary Sidebar -->
-    <aside class="card card-pad">
-      <h2 class="section-title" style="margin-top:0">What You Get</h2>
-      <p class="section-sub">Simple outputs that help you understand your business faster:</p>
-      <div class="quick">
-        <div class="kpi"><b>📊 Clean data & visuals</b><span>No more guessing at numbers.</span></div>
-        <div class="kpi"><b>📈 Easy dashboards</b><span>Track performance in one place.</span></div>
-        <div class="kpi"><b>🧠 Plain English insights</b><span>What’s happening and why.</span></div>
-        <div class="kpi"><b>⚙️ Automated reports</b><span>No more manual updates.</span></div>
-        <div class="kpi"><b>🤖 Business chatbots</b><span>Smart interactions, 24/7.</span></div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-
-    <section id="services">
+    <!-- Services -->
+    <section class="section" id="services">
       <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-sub">Choose one service, or combine them into a package. Everything is tailored to SMEs — fast, practical, and focused on outcomes.</p>
+        <div class="section-head">
+          <h2>Services that clinics actually pay for</h2>
+          <p class="muted">
+            Outcome-first work (less admin, fewer no-shows, clearer decisions). No buzzwords.
+          </p>
+        </div>
 
-        <div class="grid3">
-          <div class="card service">
-            <h3>📊 Make sense of raw data</h3>
-            <p>Turn spreadsheets and exports into clarity.</p>
+        <div class="grid-3">
+          <article class="service">
+            <h3>No-show & cancellation improvement</h3>
+            <p>Identify patterns by day/time/provider and reduce missed appointments with simple changes.</p>
             <ul>
-              <li>Data cleaning & organising</li>
-              <li>Exploratory analysis & trends</li>
-              <li>Visualisations & insights</li>
-              <li>Final report with recommendations</li>
+              <li>no-show trend & root causes</li>
+              <li>reminder timing recommendations</li>
+              <li>policy + booking optimisation</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Clinic dashboard + monthly report</h3>
+            <p>A clean dashboard you can understand — plus a short report for management decisions.</p>
+            <ul>
+              <li>patient volume & peaks</li>
+              <li>doctor utilisation</li>
+              <li>revenue & booking insights</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Admin automation + chat support</h3>
+            <p>Reduce repetitive calls and emails with automation and a clinic FAQ chatbot.</p>
+            <ul>
+              <li>website / QR chatbot</li>
+              <li>FAQ, fees, hours, policies</li>
+              <li>handover to reception when needed</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results / proof -->
+    <section class="section alt" id="results">
+      <div class="container">
+        <div class="section-head">
+          <h2>What changes after working together</h2>
+          <p class="muted">Clear before/after outcomes and “what to do next” guidance.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Operational wins</h3>
+            <ul class="checklist">
+              <li><span class="tick">✓</span> better roster planning using peak-time insights</li>
+              <li><span class="tick">✓</span> fewer gaps in provider schedules</li>
+              <li><span class="tick">✓</span> reduced front-desk overload</li>
             </ul>
           </div>
 
-          <div class="card service">
-            <h3>📈 Dashboards for business owners</h3>
-            <p>One screen to track performance.</p>
-            <ul>
-              <li>Sales, marketing & customer dashboards</li>
-              <li>Weekly/monthly performance tracking</li>
-              <li>Simple filters & drilldowns</li>
-              <li>Shareable & easy to maintain</li>
-            </ul>
-          </div>
-
-          <div class="card service">
-            <h3>⚙️ Reporting automation</h3>
-            <p>Save hours every week by automating repetitive work.</p>
-            <ul>
-              <li>Automated data refresh</li>
-              <li>Scheduled reports (weekly/monthly)</li>
-              <li>Email summaries</li>
-              <li>Clean templates & documentation</li>
-            </ul>
-          </div>
-
-          <div class="card service">
-            <h3>🤖 Business chatbots</h3>
-            <p>24/7 assistance for customers or staff.</p>
-            <ul>
-              <li>Website FAQ + lead capture bots</li>
-              <li>Customer support triage</li>
-              <li>Internal knowledge assistants</li>
-              <li>Analytics Q&A (optional)</li>
-            </ul>
-          </div>
-
-          <div class="card service">
-            <h3>🧠 AI‑assisted insights (premium)</h3>
-            <p>Turn data into quick summaries and next steps.</p>
-            <ul>
-              <li>Auto-generated insight summaries</li>
-              <li>Natural-language questions on data</li>
-              <li>Executive-ready writeups</li>
-              <li>Guardrails + privacy-first approach</li>
-            </ul>
-          </div>
-
-          <div class="card service">
-            <h3>🧩 Done-with-you consulting</h3>
-            <p>If you want to learn while we build.</p>
-            <ul>
-              <li>Guided setup & best practices</li>
-              <li>Templates you can reuse</li>
-              <li>Documentation + handover</li>
-              <li>On-call support (optional)</li>
+          <div class="panel">
+            <h3>Business wins</h3>
+            <ul class="checklist">
+              <li><span class="tick">✓</span> fewer missed appointments = higher revenue</li>
+              <li><span class="tick">✓</span> clearer reporting for owners & managers</li>
+              <li><span class="tick">✓</span> better patient experience and reviews</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="how">
+    <!-- Packages -->
+    <section class="section" id="packages">
       <div class="container">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-sub">Simple, fast, and transparent. No lock-ins. You keep everything.</p>
-
-        <div class="how">
-          <div class="card step">
-            <div class="num">1</div>
-            <h3 style="margin:0 0 8px">Quick call</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.6">We clarify your goal (e.g., marketing ROI, sales trends, customer retention) and what data you have.</p>
-          </div>
-          <div class="card step">
-            <div class="num">2</div>
-            <h3 style="margin:0 0 8px">Build & analyse</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.6">I clean the data, build visuals/dashboards, and identify the key insights and actions.</p>
-          </div>
-          <div class="card step">
-            <div class="num">3</div>
-            <h3 style="margin:0 0 8px">Deliver & explain</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.6">You get the dashboard + a plain-English report + a walkthrough so you can use it confidently.</p>
-          </div>
+        <div class="section-head">
+          <h2>Simple packages</h2>
+          <p class="muted">Start with one project. Add monthly support only if it’s useful.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <h2 class="section-title">Simple packages</h2>
-        <p class="section-sub">These are starter packages for SMEs. Exact pricing depends on data volume and systems. We’ll confirm scope on a quick call.</p>
 
         <div class="pricing">
-          <div class="card price">
-            <h3>Starter Insight Pack</h3>
-            <p class="tag">Best for: one dataset / one business question</p>
-            <p class="amt">From $XXX</p>
-            <ul>
-              <li>Data cleanup (basic)</li>
-              <li>5–8 key charts</li>
-              <li>1–2 page summary report</li>
-              <li>30‑min walkthrough</li>
+          <div class="price-card">
+            <h3>Clinic Starter</h3>
+            <p class="price">$1,500</p>
+            <p class="muted">One-off project</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> appointment & cancellation analysis</li>
+              <li><span class="tick">✓</span> utilisation snapshot</li>
+              <li><span class="tick">✓</span> dashboard + 1–2 page report</li>
+              <li><span class="tick">✓</span> 30-min handover call</li>
             </ul>
-            <div style="margin-top:14px"><a class="btn" href="#contact">Enquire</a></div>
+            <a class="btn btn--ghost btn--block" href="#contact">Ask about Starter</a>
           </div>
 
-          <div class="card price">
-            <span class="badge">Most popular</span>
-            <h3>Dashboard + Report</h3>
-            <p class="tag">Best for: ongoing tracking (sales/marketing/customers)</p>
-            <p class="amt">From $XXX</p>
-            <ul>
-              <li>Dashboard (Power BI / Looker / Tableau)</li>
-              <li>Monthly insights report</li>
-              <li>Action plan: what to change next</li>
-              <li>Handover + documentation</li>
+          <div class="price-card featured">
+            <div class="ribbon">Most popular</div>
+            <h3>Smart Clinic</h3>
+            <p class="price">$3,500</p>
+            <p class="muted">One-off project</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> everything in Starter</li>
+              <li><span class="tick">✓</span> no-show reduction plan</li>
+              <li><span class="tick">✓</span> admin automation suggestions</li>
+              <li><span class="tick">✓</span> optional clinic FAQ chatbot setup</li>
             </ul>
-            <div style="margin-top:14px"><a class="btn primary" href="#contact">Book a call</a></div>
+            <a class="btn btn--block" href="#contact">Book a call</a>
           </div>
 
-          <div class="card price">
-            <h3>Automation + Analytics</h3>
-            <p class="tag">Best for: businesses tired of manual reporting</p>
-            <p class="amt">From $XXX</p>
-            <ul>
-              <li>Automated data refresh</li>
-              <li>Scheduled weekly report delivery</li>
-              <li>Dashboard + alerts (optional)</li>
-              <li>Support period (optional)</li>
+          <div class="price-card">
+            <h3>Growth Partner</h3>
+            <p class="price">$250<span class="small">/month</span></p>
+            <p class="muted">Ongoing support</p>
+            <ul class="list">
+              <li><span class="tick">✓</span> monthly dashboard updates</li>
+              <li><span class="tick">✓</span> monthly performance report</li>
+              <li><span class="tick">✓</span> small changes & improvements</li>
+              <li><span class="tick">✓</span> email support</li>
             </ul>
-            <div style="margin-top:14px"><a class="btn" href="#contact">Enquire</a></div>
+            <a class="btn btn--ghost btn--block" href="#contact">Discuss retainer</a>
           </div>
-        </div>
-
-        <p class="fine" style="margin-top:14px;color:var(--muted)">Replace <span class="mono">$XXX</span> with your rates. If you want, tell me your target price range and I’ll set the packages to Sydney-appropriate pricing.</p>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-title">FAQ</h2>
-        <p class="section-sub">Common questions from business owners.</p>
-
-        <div class="faq">
-          <details>
-            <summary>Do I need fancy tools or a data warehouse?</summary>
-            <p>No. Many projects start with Excel/Google Sheets and exports from POS/CRM/Google Ads/Meta. We use what you already have and keep it simple.</p>
-          </details>
-          <details>
-            <summary>How quickly can you deliver?</summary>
-            <p>Small projects can be delivered in days. Dashboards and automation depend on data quality and system access. We confirm timeline after a quick scope call.</p>
-          </details>
-          <details>
-            <summary>What about data privacy?</summary>
-            <p>Your data stays confidential. We can sign an NDA. I only request the minimum needed, and I document what was used and how it’s stored.</p>
-          </details>
-          <details>
-            <summary>Can you work with my agency / team?</summary>
-            <p>Yes — I can support agencies as a white‑label analytics partner (dashboards, reporting, attribution, automation).</p>
-          </details>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Process -->
+    <section class="section alt" id="process">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-sub">Send a quick message. I’ll reply with next steps and a simple plan.</p>
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p class="muted">Smooth process. Minimal effort from your team.</p>
+        </div>
 
-        <div class="contact">
-          <div class="card card-pad">
-            <h3 style="margin:0 0 10px">Book a free 15‑minute call</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.6">Tell me what you’re trying to achieve (marketing ROI, sales tracking, customer insights). I’ll tell you the fastest way to get clarity.</p>
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="YOUR_CALENDLY_LINK_HERE" target="_blank" rel="noopener">Book via calendar</a>
-              <a class="btn" href="tel:+61YOURNUMBER">Call</a>
-              <a class="btn" href="mailto:YOUR_EMAIL_HERE">Email</a>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Quick call</h3>
+            <p>Understand your clinic setup, tools, and pain points.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Data export</h3>
+            <p>You export a CSV from your booking system (I’ll guide you).</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Dashboard + report</h3>
+            <p>You get visuals + a short report with practical next steps.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <h3>Handover</h3>
+            <p>30 minutes to explain results and actions in plain English.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Book your free 20-minute Clinic Data Health Check</h2>
+            <p class="muted">
+              Share your clinic name + best contact number. I’ll reply with 2–3 time options.
+            </p>
+
+            <div class="contact-details">
+              <p><strong>Email:</strong> yourname@email.com</p>
+              <p><strong>Location:</strong> Sydney (Rouse Hill / Tallawong)</p>
+              <p class="fineprint">Privacy note: You can share anonymised data. I don’t need patient names.</p>
             </div>
-            <p class="fine" style="margin-top:12px">Update placeholders: <span class="mono">YOUR_EMAIL_HERE</span>, <span class="mono">YOUR_CALENDLY_LINK_HERE</span>, and phone number.</p>
           </div>
 
-          <div class="card card-pad">
-            <h3 style="margin:0 0 10px">Send a message</h3>
-            <form onsubmit="return sendMail(event)">
-              <label for="name">Your name</label>
-              <input id="name" name="name" placeholder="e.g., Priya" required />
-
-              <label for="biz">Business type</label>
-              <input id="biz" name="biz" placeholder="e.g., Cafe / Clinic / Agency" required />
-
-              <label for="goal">What do you want to improve?</label>
-              <input id="goal" name="goal" placeholder="e.g., Marketing ROI, sales tracking, customer retention" required />
-
-              <label for="msg">Details</label>
-              <textarea id="msg" name="msg" placeholder="What data do you have (Sheets/Excel/CRM/Ads)? Any deadline?" required></textarea>
-
-              <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-                <button class="btn primary" type="submit">Send</button>
-                <a class="btn" href="mailto:YOUR_EMAIL_HERE">Or email directly</a>
-              </div>
-            </form>
-          </div>
+          <form class="form" onsubmit="event.preventDefault(); alert('Form demo only. Add Formspree / Netlify Forms to receive submissions.');">
+            <label>
+              Clinic name
+              <input type="text" placeholder="Example Family Medical Centre" required>
+            </label>
+            <label>
+              Your name
+              <input type="text" placeholder="Your name" required>
+            </label>
+            <label>
+              Phone / email
+              <input type="text" placeholder="Best contact" required>
+            </label>
+            <label>
+              What do you want to improve?
+              <textarea rows="4" placeholder="No-shows, admin workload, reporting..." required></textarea>
+            </label>
+            <button class="btn btn--block" type="submit">Request the free check</button>
+            <p class="fineprint">Reply within 24 hours.</p>
+          </form>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
-          <div>
-            <div style="font-weight:800">Shivansh • Analytics for SMEs</div>
-            <div class="fine">Sydney • Dashboards • Reports • Automation • Chatbots</div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#services">Services</a>
-            <a class="btn" href="#contact">Contact</a>
-          </div>
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Shivansh Pandey • Data & Automation for Clinics</p>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#packages">Packages</a>
+          <a href="#contact">Contact</a>
         </div>
-        <p class="fine" style="margin-top:14px">© <span id="year"></span> Shivansh. All rights reserved.</p>
       </div>
     </footer>
   </main>
 
   <script>
-    // Update year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple mailto form handler (no backend required)
-    function sendMail(e){
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('name').value.trim());
-      const biz  = encodeURIComponent(document.getElementById('biz').value.trim());
-      const goal = encodeURIComponent(document.getElementById('goal').value.trim());
-      const msg  = encodeURIComponent(document.getElementById('msg').value.trim());
-
-      const subject = `Analytics help request (${decodeURIComponent(biz)})`;
-      const body = `Hi Shivansh,%0D%0A%0D%0AName: ${name}%0D%0ABusiness: ${biz}%0D%0AGoal: ${goal}%0D%0A%0D%0ADetails:%0D%0A${msg}%0D%0A%0D%0AThanks!`;
-
-      window.location.href = `mailto:YOUR_EMAIL_HERE?subject=${encodeURIComponent(subject)}&body=${body}`;
-      return false;
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
