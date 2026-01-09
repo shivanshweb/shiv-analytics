@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trades & Local Services | Leads, Quotes & Scheduling | Shivansh Pandey</title>
+  <meta name="description" content="Dashboards and automation for trades: quote follow-up, job scheduling, lead tracking, and reporting for owners." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="dot"></span><span>Shivansh Pandey</span></a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="clinics.html">Clinics</a>
+        <a href="local-services.html" class="active">Local services</a>
+        <a href="retail-ecom.html">Retail/eCom</a>
+        <a href="index.html#contact" class="btn btn--small">Book a free check</a>
+      </nav>
+
+      <button class="burger" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Trades • salons • cleaning • tutoring • local services</p>
+          <h1>
+            Convert more leads, follow up faster, and run smoother scheduling —
+            with <span class="accent">simple reporting + automation</span>.
+          </h1>
+          <p class="subtext">
+            Many local service businesses lose money due to slow quote follow-up, missed calls,
+            and messy scheduling. I help you track the full journey: enquiry → quote → booking → job.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="index.html#contact">Book a free 20-min Business Data Health Check</a>
+            <a class="btn btn--ghost" href="#wins">Common wins</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item"><strong>Owner-focused</strong><span>clear numbers</span></div>
+            <div class="trust-item"><strong>Practical</strong><span>quick wins</span></div>
+            <div class="trust-item"><strong>Scalable</strong><span>simple systems</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <div class="card-top">
+              <h3>What I typically improve</h3>
+              <p class="muted">The “leaks” you can fix fast.</p>
+            </div>
+            <ul class="list">
+              <li><span class="tick">✓</span> lead tracking (where enquiries come from)</li>
+              <li><span class="tick">✓</span> quote follow-up timing and conversion</li>
+              <li><span class="tick">✓</span> scheduling + capacity insights</li>
+              <li><span class="tick">✓</span> admin automation (FAQs, reminders)</li>
+            </ul>
+            <div class="mini-cta">
+              <a class="btn btn--block" href="index.html#contact">Request the free check</a>
+              <p class="fineprint">Works with spreadsheets, CRMs, email, bookings tools.</p>
+            </div>
+          </div>
+
+          <div class="mini-metrics">
+            <div class="metric"><span class="metric-num">+ faster</span><span class="metric-label">lead follow-up</span></div>
+            <div class="metric"><span class="metric-num">clear</span><span class="metric-label">pipeline visibility</span></div>
+            <div class="metric"><span class="metric-num">less</span><span class="metric-label">admin time</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wins">
+      <div class="container">
+        <div class="section-head">
+          <h2>Common wins</h2>
+          <p class="muted">These are the changes owners feel immediately.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service">
+            <h3>Lead & quote dashboard</h3>
+            <p>Know what’s coming in and what converts.</p>
+            <ul>
+              <li>lead source breakdown</li>
+              <li>quote conversion rate</li>
+              <li>follow-up performance</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Scheduling insights</h3>
+            <p>Reduce idle time and fix bottlenecks.</p>
+            <ul>
+              <li>busy vs quiet periods</li>
+              <li>capacity planning</li>
+              <li>service duration trends</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Automation add-ons</h3>
+            <p>Free up time by reducing repeat questions and missed follow-ups.</p>
+            <ul>
+              <li>FAQ chatbot</li>
+              <li>reminders & confirmations</li>
+              <li>simple follow-up flows</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Shivansh Pandey</p>
+        <div class="footer-links">
+          <a href="index.html#contact">Contact</a>
+          <a href="clinics.html">Clinics</a>
+          <a href="retail-ecom.html">Retail/eCom</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
