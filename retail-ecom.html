@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retail & eCommerce | Sales, Inventory & Ads Reporting | Shivansh Pandey</title>
+  <meta name="description" content="Dashboards for retail/eCom: sales trends, best sellers, inventory insights, marketing reporting, and repeat customer analysis." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="dot"></span><span>Shivansh Pandey</span></a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="clinics.html">Clinics</a>
+        <a href="local-services.html">Local services</a>
+        <a href="retail-ecom.html" class="active">Retail/eCom</a>
+        <a href="index.html#contact" class="btn btn--small">Book a free check</a>
+      </nav>
+
+      <button class="burger" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Retail • Shopify • POS • ads reporting</p>
+          <h1>
+            Understand what’s selling, what’s not, and where profit is leaking —
+            with <span class="accent">clear dashboards</span> you’ll actually use.
+          </h1>
+          <p class="subtext">
+            I help retailers and eCommerce owners track sales trends, best sellers, inventory risk,
+            and marketing performance — with a simple report you can act on monthly.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="index.html#contact">Book a free 20-min Business Data Health Check</a>
+            <a class="btn btn--ghost" href="#focus">What we focus on</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item"><strong>Clarity</strong><span>one dashboard</span></div>
+            <div class="trust-item"><strong>Profit</strong><span>margin insights</span></div>
+            <div class="trust-item"><strong>Growth</strong><span>repeat customers</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <div class="card-top">
+              <h3>Typical deliverables</h3>
+              <p class="muted">Owner-friendly monthly view.</p>
+            </div>
+            <ul class="list">
+              <li><span class="tick">✓</span> sales trends + best sellers</li>
+              <li><span class="tick">✓</span> inventory risk & stockouts</li>
+              <li><span class="tick">✓</span> customer repeat & basket insights</li>
+              <li><span class="tick">✓</span> marketing reporting (if applicable)</li>
+            </ul>
+            <div class="mini-cta">
+              <a class="btn btn--block" href="index.html#contact">Request the free check</a>
+              <p class="fineprint">Works with Shopify exports / POS exports / spreadsheets.</p>
+            </div>
+          </div>
+
+          <div class="mini-metrics">
+            <div class="metric"><span class="metric-num">clear</span><span class="metric-label">best sellers</span></div>
+            <div class="metric"><span class="metric-num">less</span><span class="metric-label">dead stock</span></div>
+            <div class="metric"><span class="metric-num">better</span><span class="metric-label">reorders</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we focus on</h2>
+          <p class="muted">The metrics that change decisions.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service">
+            <h3>Sales performance</h3>
+            <p>Trends, best sellers, underperformers, seasonality.</p>
+            <ul>
+              <li>daily/weekly/monthly</li>
+              <li>category insights</li>
+              <li>promotion impact</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Inventory insights</h3>
+            <p>Stockouts, dead stock, and reorder priorities.</p>
+            <ul>
+              <li>low stock alerts</li>
+              <li>sell-through</li>
+              <li>reorder recommendations</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Customer behaviour</h3>
+            <p>Repeat rate, basket size, retention signals.</p>
+            <ul>
+              <li>repeat customers</li>
+              <li>average order value</li>
+              <li>top customer segments</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Shivansh Pandey</p>
+        <div class="footer-links">
+          <a href="index.html#contact">Contact</a>
+          <a href="clinics.html">Clinics</a>
+          <a href="local-services.html">Local services</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
